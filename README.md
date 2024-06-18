@@ -1,24 +1,4 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+https://github.com/sameerkch12/Ruby_On_Rail/assets/62991891/c4db4908-f9b1-4ae9-9e86-0922a4387bc5
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
