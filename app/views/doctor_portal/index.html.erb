@@ -1,0 +1,53 @@
+<h1>Doctor Portal</h1>
+
+<div style="width: 80%; margin: auto;">
+  <canvas id="patientsChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chartData = <%= @patients_count_by_day.to_json %>;
+
+    // Process data for Chart.js
+    const labels = Object.keys(chartData);
+    const data = Object.values(chartData);
+
+    // Chart.js setup
+    const ctx = document.getElementById('patientsChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Patients Registered',
+          data: data,
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        scales: {
+          x: {
+            type: 'time',
+            time: {
+              unit: 'day'
+            },
+            title: {
+              display: true,
+              text: 'Date'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Number of Patients'
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
